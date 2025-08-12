@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="blur-circle circle1"></div>
+    <div class="blur-circle circle2"></div>
+    <div class="todo-box">
+      <!-- TITLE -->
+      <h1>Todo List</h1>
+      <!-- INPUT BOX -->
+      <div class="input-box">
+        <input type="text" placeholder="Add a new task" class="main-input" />
+        <button class="button add-btn">
+          <i class="fas fa-plus"></i>
+        </button>
+      </div>
+
+      <!-- TO DO LIST -->
+      <p class="todo-mes"></p>
+      <div class="todo-list">
+      </div>
+      <p class="footer">Click <i class="far fa-edit"></i> to edit — Enter to save, Esc to cancel</p>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
