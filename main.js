@@ -5,21 +5,12 @@ const addBtn = document.querySelector(".add-btn");
 const STORAGE_KEY = "fa_todo";
 
 // ALL TODODS TO SHOW
-const todos = loadTasks();
+const todos = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
 function saveTasks() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
 }
 
-function loadTasks() {
-  try {
-    const data = localStorage.getItem(STORAGE_KEY);
-    return data ? JSON.parse(data) : [];
-  } catch (e) {
-    console.error("خطا در خواندن localStorage", e);
-    return [];
-  }
-}
 // functions
 
 // create item
@@ -100,7 +91,7 @@ function addItem() {
   if (value !== "") {
     todos.push({ text: value, done: false });
     renderItems();
-    saveTasks()
+    saveTasks();
     todoMessage.classList.remove("show");
   } else {
     showMessage();
@@ -128,7 +119,7 @@ function editItem(item, textEl) {
       }
       item.text = newText;
     }
-
+    todoMessage.classList.remove("show");
     input.replaceWith(textEl);
     textEl.textContent = item.text;
     saveTasks();
